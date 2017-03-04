@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+*.swp
+bin
+include
+lib64
+pip-selfcheck.json
+share

@@ -1,0 +1,4 @@
+# Site-specific additions and overrides for system_tor.
+# For more details, please see /etc/apparmor.d/local/README.
+/var/globaleaks/torhs/ rw,
+/var/globaleaks/torhs/** rwk,
