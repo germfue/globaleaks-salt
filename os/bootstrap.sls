@@ -1,8 +1,5 @@
-Install basic packages for Salt:
-  pkg.installed:
-    - pkgs:
-      {% if grains['os'] == 'Ubuntu' %}
-      - python-software-properties
-      - python-pycurl
-      - python-apt
-      {% endif %}
+Install python2:
+  cmd.run:
+    {% if grains['os'] == 'Ubuntu' %}
+    - name: apt-get install python-all
+    {% endif %}
