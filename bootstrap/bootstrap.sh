@@ -1,0 +1,7 @@
+#!/bin/bash
+
+server=$1
+
+ssh root@$server 'mkdir -p /root/.ssh ; chmod 700 /root/.ssh ; echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRDCuwAJwMYf9BHkaDJ0rbUvJX+uyBaR6c0Fcg5+1K5OIHzY/tqQABmir2kfq8AdGTlZRylc8axIU0b8NmJfUdOwga3sUAp6QXvl3OcPgvCDYwNlieUl5XDXyNhDaABQ4BJgmwnNivTlzHO/Za+I4PAVdv4Xq5So0zbPBvqYbqgiGmrhQ5Yg2ULl+meY00uXrj3X9gzy157b9l3fsNsLLeYadabsxodFZ7SqziFR82ictG2I1LUyzvXataA7lYGxUHZpsIIddh69aA+LvjuiluVzQGJfzeX0FfzWt/0fjuFIu1oR5wK9OyuU9JciTMjKP0RaDEsuD/AweU6nGJWxuL user@server1" > /root/.ssh/authorized_keys ; echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDboFL1xj8oEYVLkRaxgEkdIbvCif7KJiQzpzhj57i9KkpTfEq1CUKHr2a9VGiShrgZWMXmI2k6Ryn5Zy96IxDSlZNIrPMfBYIXTj09mKrfzrNw/g7uYhZzGkm3zi7VBIcGBfgdQGa3/PniYy47hL6Hob1vTZb0n5jxheDojrYKIISg72PR2QZU+1AOLmYMWDvfnmFNRm0SXJOEUBUqG91wwi/Zyv24QASK9oEDewH++sGMxpgMGhPnyDe7Zx8AUDiBKRTySRz+J2TLPT1cm25mcblrkHsWK/vEAt4PozW/D2gp3o8A8+35rQXYZmGOkaIl28bJEYqKoTYIK8G5LDwV user@server2" >> /root/.ssh/authorized_keys ; chmod 600 /root/.ssh/authorized_keys'
+
+
