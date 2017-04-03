@@ -39,6 +39,8 @@ Install Tor repository:
 # There is a bug in the GlobaLeaks installer, that sets the wrong
 # permissions in apparmor for the Tor server
 ###########################################################################
+  {% if not grains['virtual'] == 'openvzve' %}
+
 Include local system_tor apparmor profile:
   file.managed:
     - name: /etc/apparmor.d/system_tor
@@ -66,6 +68,8 @@ tor:
       - file: /etc/apparmor.d/local/system_tor
     - require:
       - apparmor
+
+  {% endif %}
 
 ###########################################################################
 # Download and install GlobaLeaks application
