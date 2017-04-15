@@ -2,6 +2,7 @@ base:
   '*':
     # basic setup
     - os.locale
+    - service.sshd
     - service.apache2
     - service.fetchmail
     - service.postfix
