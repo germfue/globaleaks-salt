@@ -29,11 +29,15 @@ Disable AppArmor configuration for Globaleaks:
     - user: root
     - group: root
     - makedirs: False
+    - onfail:
+      - pkg: Install GlobaLeaks service
 
 Re-Install GlobaLeaks service:
   pkg.installed:
     - pkgs:
       - globaleaks
+    - onfail:
+      - pkg: Install GlobaLeaks service
 
 {% endif %}
 {% endif %}
