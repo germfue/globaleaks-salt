@@ -22,3 +22,19 @@ Upload authorized keys:
 Restrict permissions in ssh folder:
   cmd.run:
     - name: chmod 0700 /root/.ssh
+
+###########################################################################
+# Sync sshd_config
+###########################################################################
+Sync /etc/ssh/sshd_config:
+  file.managed:
+    - name: /etc/ssh/sshd_config
+    - source: salt://files/etc/ssh/sshd_config
+    - user: root
+    - group: root
+    - makedirs: True
+  service.running:
+    - name: ssh
+    - reload: True
+    - watch:
+      - file: /etc/ssh/sshd_config
