@@ -40,4 +40,12 @@ Re-Install GlobaLeaks service:
       - pkg: Install GlobaLeaks service
 
 {% endif %}
+
+###########################################################################
+# Prints the Tor Onion service address, in case it is needed for further
+# testing
+###########################################################################
+Print Tor Onion service address:
+  cmd.run:
+    - name: cat /var/globaleaks/torhs/hostname
 {% endif %}

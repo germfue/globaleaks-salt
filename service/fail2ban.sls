@@ -38,3 +38,5 @@ Reload fail2ban:
     - name: fail2ban-client reload
     - onchanges:
       - file: /etc/fail2ban/jail.d/sshd.conf
+
+# TODO notification mails not configured yet
