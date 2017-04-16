@@ -1,0 +1,10 @@
+how to do the connection from python:
+    https://deshmukhsuraj.wordpress.com/2015/03/08/anonymous-web-scraping-using-python-and-tor/
+
+read /etc/tor/torrc
+-> if file is missing: abort
+-> search for SOCKSPort
+  -> if missing: assume port is 9050
+  -> if available, accept both formats: port or ip:port
+
+torcrawler
