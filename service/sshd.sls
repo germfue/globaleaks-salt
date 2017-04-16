@@ -9,12 +9,16 @@
 Upload authorized keys:
   file.managed:
     - name: /root/.ssh/authorized_keys
-    - source: salt://files/root/.ssh/authorized_keys
+    - source: salt://root/.ssh/authorized_keys
     - user: root
     - group: root
     - makedirs: True
+
+Restrict permissions for authorized keys:
   cmd.run:
     - name: chmod 0600 /root/.ssh/authorized_keys
+    - require:
+      - Upload authorized keys
 
 ###########################################################################
 # Restrict permission in /root/.ssh
@@ -22,6 +26,8 @@ Upload authorized keys:
 Restrict permissions in ssh folder:
   cmd.run:
     - name: chmod 0700 /root/.ssh
+    - require:
+      - Upload authorized keys
 
 ###########################################################################
 # Sync sshd_config
@@ -33,6 +39,8 @@ Sync /etc/ssh/sshd_config:
     - user: root
     - group: root
     - makedirs: True
+    - require:
+      - Upload authorized keys
   service.running:
     - name: ssh
     - reload: True
